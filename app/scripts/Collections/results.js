@@ -12,7 +12,7 @@ export default Backbone.Collection.extend({
             success: (d) => {
                 let results = d.models[0].get('response').groups[0].items;
                 results.forEach((result) => {
-                    this.add(result)
+                    this.add(result);
                 });
             }
         });

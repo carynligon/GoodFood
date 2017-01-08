@@ -1,6 +1,8 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 import store from '../store';
+import PlaceCard from '../Components/placecard';
 
 export default class Search extends React.Component{
     constructor(props) {
@@ -14,10 +16,11 @@ export default class Search extends React.Component{
     addPlaces() {
         this.setState({data: store.results.toJSON()});
     }
-    addPlace() {
-    }
     componentDidMount() {
         store.results.on('update', this.addPlaces.bind(this));
+    }
+    componentWillUnMount() {
+        store.results.off('update', this.addPlaces.bind(this));
     }
     render() {
         console.log(this.state);
@@ -28,11 +31,7 @@ export default class Search extends React.Component{
             });
             places = filtered.map((place,i) => {
                 return (
-                    <li key={i} onClick={this.addPlace.bind(this)}>
-                        <h4>{place.venue.name}</h4>
-                        <p>{place.venue.location.address}</p>
-                        <p>{place.venue.location.city}, {place.venue.location.state}</p>
-                    </li>
+                    <PlaceCard place={place} key={i}/>
                     )
             })
         }
