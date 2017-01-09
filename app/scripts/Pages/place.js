@@ -11,7 +11,7 @@ export default class Place extends React.Component{
     addPlace(e) {
         e.preventDefault();
         console.log(this.state);
-        store.savedPlaces.addPlace(this.state.place, Number(this.refs.rank.value));
+        store.savedPlaces.addPlace(this.state.place, Number(this.refs.rank.value), this.refs.recommendations.value);
     }
     render() {
         let dollars;
@@ -30,6 +30,7 @@ export default class Place extends React.Component{
                 <p>{dollars}</p>
                 <form onSubmit={this.addPlace.bind(this)}>
                     <input type="number" min="1" max="5" ref="rank"/>
+                    <input type="text" placeholder="recommendations" ref="recommendations"/>
                     <input type="submit" value="add"/>
                 </form>
             </main>

@@ -1,0 +1,22 @@
+table {
+    box-shadow: $box-shadow-primary;
+    margin: 3rem auto;
+    max-width: 800px;
+    width: 80%;
+    th, td {
+        display: table-cell;
+        text-align: center;
+        width: calc(100%/5);
+    }
+    th {
+        background: darken($primary-red, 5%);
+        color: $primary-white;
+    }
+    td:nth-child(even) {
+        background: $primary-white;
+        color: $primary-gray;
+    }
+    td:nth-child(odd) {
+        background: darken($primary-white, 5%);
+    }
+}

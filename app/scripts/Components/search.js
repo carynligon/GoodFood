@@ -36,13 +36,15 @@ export default class Search extends React.Component{
             })
         }
         return (
-            <form onSubmit={this.handleSearch.bind(this)}>
-                <input type="text" name="query" placeholder="search places" ref="query"/>
-                <input type="submit" value="search" name="submit"/>
+            <main>
+                <form className="search-form" onSubmit={this.handleSearch.bind(this)}>
+                    <input type="text" name="query" placeholder="search places..." ref="query"/>
+                    <input type="submit" value="search" name="submit"/>
+                </form>
                 <ul className="results-list">
-                    {places}
+                        {places}
                 </ul>
-            </form>
+            </main>
         );
     }
 }

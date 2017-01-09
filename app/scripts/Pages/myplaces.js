@@ -25,7 +25,9 @@ export default class MyPlaces extends React.Component{
                     <tr key={i}>
                         <td>{place.Name}</td>
                         <td>{place.Rank}</td>
+                        <td>{place.Genre}</td>
                         <td>{place.Price}</td>
+                        <td>{place.Recommendations}</td>
                     </tr>
                     )
             });
@@ -37,7 +39,9 @@ export default class MyPlaces extends React.Component{
                         <tr>
                             <th>Place</th>
                             <th>Rank</th>
+                            <th>Genre</th>
                             <th>Price</th>
+                            <th>Recommendations</th>
                         </tr>
                     </thead>
                     <tbody>
