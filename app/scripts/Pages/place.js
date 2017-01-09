@@ -8,6 +8,11 @@ export default class Place extends React.Component{
         super(props);
         this.state = {place: store.results.get(this.props.params.id).toJSON()};
     }
+    addPlace(e) {
+        e.preventDefault();
+        console.log(this.state);
+        store.savedPlaces.addPlace(this.state.place, Number(this.refs.rank.value));
+    }
     render() {
         let dollars;
         if (this.state.place.venue.price.tier === 3) {
@@ -23,7 +28,10 @@ export default class Place extends React.Component{
                 <p>{this.state.place.venue.location.address}</p>
                 <p>{this.state.place.venue.location.city}, {this.state.place.venue.location.state}</p>
                 <p>{dollars}</p>
-                <button className="add-place">Add</button>
+                <form onSubmit={this.addPlace.bind(this)}>
+                    <input type="number" min="1" max="5" ref="rank"/>
+                    <input type="submit" value="add"/>
+                </form>
             </main>
         )
     }
