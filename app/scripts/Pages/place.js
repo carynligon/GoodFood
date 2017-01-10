@@ -11,7 +11,6 @@ export default class Place extends React.Component{
     }
     addPlace(e) {
         e.preventDefault();
-        console.log(this.state);
         store.savedPlaces.addPlace(this.state.place, Number(this.refs.rank.value), this.refs.recommendations.value);
     }
     render() {

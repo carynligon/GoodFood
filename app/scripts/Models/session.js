@@ -13,13 +13,20 @@ export default Backbone.Model.extend({
           contentType:'application/json',
           data:JSON.stringify({login, password}),
           success:(response)=>{
-            console.log(response)
             this.token = response['user-token']
             localStorage.setItem('token', response['user-token']);
             localStorage.setItem('id', response['objectId']);
-            console.log(this)
             browserHistory.push('/');
           }
+        });
+    },
+    logout() {
+        $.ajax({
+            url: 'https://api.backendless.com/v1/users/logout',
+            success: (d) => {
+                localStorage.clear();
+                browserHistory.push('/login');
+            }
         });
     }
 });

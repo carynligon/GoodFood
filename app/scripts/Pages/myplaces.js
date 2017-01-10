@@ -1,4 +1,3 @@
-import _ from 'underscore';
 import React from 'react';
 
 import store from '../store';
@@ -11,9 +10,7 @@ export default class MyPlaces extends React.Component{
         this.state={};
     }
     updatePlaces() {
-        let userId = localStorage.getItem('id');
-        let places = _.where(store.savedPlaces.models[0].get('data'), {ownderId: userId});
-        this.setState({places: places});
+        this.setState({places: store.savedPlaces.toJSON()});
     }
     componentDidMount() {
         store.savedPlaces.on('update', this.updatePlaces.bind(this));
@@ -23,9 +20,8 @@ export default class MyPlaces extends React.Component{
     }
     render() {
         let places;
-        console.log(this.state)
         if (this.state.places) {
-            places = this.state.places.map((place,i) => {
+            places = this.state.places[0].data.map((place,i) => {
                 return (
                     <tr key={i}>
                         <td>{place.Name}</td>

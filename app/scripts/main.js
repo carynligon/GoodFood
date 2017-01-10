@@ -2,15 +2,17 @@ import $ from 'jquery';
 import ReactDOM from 'react-dom';
 
 import Router from './router';
+import {browserHistory} from 'react-router';
 import settings from './settings';
 import store from './store';
 
 if (localStorage.getItem('token')) {
     store.session.set({token: localStorage.getItem('token')});
+} else {
+    browserHistory.push('/login');
 }
 
 $(document).ajaxSend((evt, xhr, opts) => {
-    console.log(opts)
     if (opts.url.indexOf('backendless') !== -1) {
         xhr.setRequestHeader('application-id', settings.appId);
         xhr.setRequestHeader('secret-key', settings.secret);

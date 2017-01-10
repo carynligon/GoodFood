@@ -11,8 +11,6 @@ export default class Login extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        console.log(store.session);
-        console.log(this.refs)
         store.session.login(this.refs.email.value, this.refs.password.value);
     }
     render() {

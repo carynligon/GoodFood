@@ -12,8 +12,6 @@ export default Backbone.Collection.extend({
             rank: rank,
             recommendations: recommendations,
             price: model.venue.price.tier
-        }, {
-            success: (d) => console.log(d)
         });
    }
 });

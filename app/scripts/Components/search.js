@@ -23,7 +23,6 @@ export default class Search extends React.Component{
         store.results.off('update', this.addPlaces.bind(this));
     }
     render() {
-        console.log(this.state);
         let places;
         if (this.state.data) {
             let filtered = this.state.data.filter((place) => {

@@ -11,7 +11,6 @@ export default class Signup extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.refs)
         store.users.register(this.refs.email.value, this.refs.password.value);
     }
     render() {
