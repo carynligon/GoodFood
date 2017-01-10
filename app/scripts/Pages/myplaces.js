@@ -1,6 +1,7 @@
 import React from 'react';
 
 import store from '../store';
+import Nav from '../Components/nav';
 
 export default class MyPlaces extends React.Component{
     constructor(props) {
@@ -34,6 +35,7 @@ export default class MyPlaces extends React.Component{
         }
         return (
             <main>
+                <Nav/>
                 <table>
                     <thead>
                         <tr>

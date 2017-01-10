@@ -2,6 +2,7 @@ import $ from 'jquery';
 import React from 'react';
 
 import store from '../store';
+import Nav from '../Components/nav';
 
 export default class Place extends React.Component{
     constructor(props) {
@@ -23,13 +24,14 @@ export default class Place extends React.Component{
             dollars = '$'
         }
         return(
-            <main>
+            <main className="place-page">
+                <Nav/>
                 <h2>{this.state.place.venue.name}</h2>
-                <p>{this.state.place.venue.location.address}</p>
-                <p>{this.state.place.venue.location.city}, {this.state.place.venue.location.state}</p>
-                <p>{dollars}</p>
+                <p className="geo-info">{this.state.place.venue.location.address}</p>
+                <p className="geo-info">{this.state.place.venue.location.city}, {this.state.place.venue.location.state}</p>
+                <p className="price">{dollars}</p>
                 <form onSubmit={this.addPlace.bind(this)}>
-                    <input type="number" min="1" max="5" ref="rank"/>
+                    <input type="number" min="1" max="5" ref="rank" placeholder="1"/>
                     <input type="text" placeholder="recommendations" ref="recommendations"/>
                     <input type="submit" value="add"/>
                 </form>

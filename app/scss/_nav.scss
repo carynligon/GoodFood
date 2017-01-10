@@ -1,0 +1,30 @@
+nav {
+    background: $white;
+    box-sizing: border-box;
+    box-shadow: $box-shadow-primary;
+    width: 100%;
+    a {
+        padding: 1rem;
+        text-decoration: none;
+        transition: 0.6s all;
+    }
+    a:first-child {
+        color: $primary-gray;
+        float: left;
+        &:hover {
+            background: $primary-gray;
+            color: $primary-white;
+        }
+    }
+    a:last-child {
+        color: darken($primary-red, 10%);
+        float: right;
+        &:hover {
+            background: darken($primary-red, 10%);
+            color: $primary-white;
+        }
+    }
+    &:after {
+        @include clearfix;
+    }
+}

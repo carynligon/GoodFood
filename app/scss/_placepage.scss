@@ -1,0 +1,34 @@
+.place-page {
+    h2 {
+        font-size: $h2;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    .geo-info {
+        margin: 0;
+    }
+    form {
+        margin: 0 auto;
+        text-align: center;
+        width: 300px;
+        input {
+            margin: 0 0.5rem;
+            padding: 0.5rem;
+        }
+        input[type=submit] {
+            border: 0;
+            background: $white;
+            color: darken($primary-red, 10%);
+            display: block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            &:hover {
+                background: darken($primary-red, 10%);
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+}

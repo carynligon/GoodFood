@@ -1,6 +1,26 @@
+// colors
 $white: #FFF;
 $primary-white: #EDF2F4;
 $primary-gray: #2B2D42;
 $primary-red: #D90429;
+
+// font-sizes
+$body-text: 1rem;
+$body-text-sm: 0.8rem;
+$h1: 4rem;
+$h2: 3rem;
+$h3: 2rem;
+$h4: 1.75rem;
+$h5: 1.5rem;
+$h6: 1.25rem;
+
+// base styles
 $box-shadow-primary: 2px 2px 3px rgba(0,0,0,0.3);
 $box-shadow-secondary: 3px 3px 4px rgba(0,0,0,0.4);
+
+// mixins
+@mixin clearfix{
+    content: '';
+    clear: both;
+    display: block;
+}
