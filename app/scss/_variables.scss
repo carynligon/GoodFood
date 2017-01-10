@@ -24,3 +24,8 @@ $box-shadow-secondary: 3px 3px 4px rgba(0,0,0,0.4);
     clear: both;
     display: block;
 }
+
+@mixin focus {
+    border: 2px solid darken($primary-red, 10%);
+    outline: none;
+}

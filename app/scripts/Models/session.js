@@ -15,7 +15,8 @@ export default Backbone.Model.extend({
           success:(response)=>{
             console.log(response)
             this.token = response['user-token']
-            localStorage.setItem('token', response['user-token'])
+            localStorage.setItem('token', response['user-token']);
+            localStorage.setItem('id', response['objectId']);
             console.log(this)
             browserHistory.push('/');
           }

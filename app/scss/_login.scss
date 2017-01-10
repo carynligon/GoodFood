@@ -1,0 +1,44 @@
+.login-signup {
+    h3 {
+        margin-top: 15%;
+        text-align: center;
+    }
+    form {
+        margin: 0 auto;
+        text-align: center;
+        width: 400px;
+        input {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.5rem;
+            width: 200px;
+        }
+        input[type=submit] {
+            background: darken($primary-red, 10%);
+            box-shadow: $box-shadow-primary;
+            border: 0;
+            color: $primary-white;
+            font-size: 1rem;
+            margin: 1rem auto;
+            padding: 0.5rem;
+            width: 100px;
+            transition: all 0.6s;
+            &:hover {
+                background: $primary-white;
+                box-shadow: $box-shadow-secondary;
+                color: darken($primary-red, 10%);
+                cursor: pointer;
+            }
+        }
+    }
+    a {
+        color: $white;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        transition: 0.6s all;
+        &:hover {
+            color: $primary-gray;
+        }
+    }
+}

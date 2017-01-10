@@ -4,27 +4,26 @@ import {browserHistory} from 'react-router';
 import store from '../store';
 import Nav from '../Components/nav';
 
-export default class Login extends React.Component {
+export default class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
     handleSubmit(e) {
         e.preventDefault();
-        console.log(store.session);
         console.log(this.refs)
-        store.session.login(this.refs.email.value, this.refs.password.value);
+        store.users.register(this.refs.email.value, this.refs.password.value);
     }
     render() {
         return (
             <main className="login-signup">
                 <Nav/>
-                <h3>Login</h3>
+                <h3>Signup</h3>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="email" placeholder="email" ref="email" name="email"/>
                     <input type="password" placeholder="password" ref="password" name="password"/>
                     <input type="submit" value="login"/>
-                    <p>Need an account? <a href="/signup">Signup</a></p>
+                    <p>Have an account? <a href="/login">Login</a></p>
                 </form>
             </main>
         );

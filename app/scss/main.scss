@@ -4,6 +4,7 @@
 @import 'placecard';
 @import 'myplaces';
 @import 'placepage';
+@import 'login';
 
 body {
     background: $primary-red;
@@ -13,4 +14,30 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: avenir, sans-serif;
+}
+
+h1 {
+    font-size: $h1;
+}
+h2 {
+    font-size: $h2;
+}
+h3 {
+    font-size: $h3;
+}
+h4 {
+    font-size: $h4;
+}
+h5 {
+    font-size: $h5;
+}
+h6 {
+    font-size: $h6;
+}
+
+input {
+    transition: 0.6s all;
+    &:focus {
+        @include focus;
+    }
 }
