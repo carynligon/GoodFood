@@ -39,3 +39,11 @@ nav {
         @include clearfix;
     }
 }
+
+@media (max-width: 600px) {
+    nav {
+        a, p {
+            padding: 1.5rem;
+        }
+    }
+}

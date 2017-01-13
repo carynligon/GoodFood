@@ -23,3 +23,14 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .results-list {
+        li {
+            width: calc(100%/2 - 20px);
+            h4 {
+                font-size: $h5;
+            }
+        }
+    }
+}

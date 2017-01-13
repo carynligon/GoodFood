@@ -1,10 +1,14 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 import store from '../store';
 import Nav from '../Components/nav';
 
 export default class MyPlaces extends React.Component{
     constructor(props) {
+        if (!localStorage.getItem('token')) {
+            browserHistory.push('/login');
+        }
         super(props);
         store.savedPlaces.fetch();
         this.state={};
